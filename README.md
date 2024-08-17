@@ -15,6 +15,7 @@
 - First, download all the files and change the directory:
 ```bash
 cd
+mkdir fastapi
 cd app
 ```
 
