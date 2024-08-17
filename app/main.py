@@ -61,7 +61,8 @@ async def read_root(request: Request, result: str = None):
 @app.post('/calculate')
 async def calculate(request: Request, number1: str = Form(...), number2: str = Form(...)):
     result = cal.add(number1, number2)
-    return RedirectResponse(url=f"/home?result={result}")
+    return RedirectResponse(url=f"/home?result={result}", status_code=HTTP_302_FOUND)
+
 
 if __name__ == "__main__":
     import uvicorn
