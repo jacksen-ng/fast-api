@@ -14,13 +14,17 @@
 
 - First, download all the files and change the directory:
 ```bash
-cd fast-api
+cd
 cd app
 ```
 
-- After that create a python virtual environment
+- After that create a python virtual environment and activate it
 ```
 python -m venv fastapivenv
+```
+
+```
+source fastapivenv/bin/activate
 ```
 
 - Then, install the required packages:
