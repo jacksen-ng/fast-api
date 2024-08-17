@@ -40,5 +40,19 @@
     ```
 
 
-## About **app** folder
+## About the **app** Folder
+
+1. This folder contains six main components: *db*, *model*, *static*, *templates*, *main.py*, and *requirements.txt*.
+
+2. The **db** folder contains the database settings.
+
+3. The **model** folder contains the functions used in this website.
+
+4. The **static** folder stores JavaScript files.
+
+5. The **templates** folder stores HTML files.
+
+6. The **main.py** file is the main entry point of the FastAPI application.
+
+7. The **requirements.txt** file lists all the dependencies required to run the project.
 
