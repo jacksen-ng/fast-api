@@ -13,27 +13,29 @@
 >Please use a Linux environment to proceed.
 
 - First, download all the files and change the directory:
-```bash
-cd
-mkdir fastapi
-cd app
-```
+1. First, download all the files and change the directory:
+    ```bash
+    cd
+    mkdir fastapi
+    mv ~/Downloads/app ~/fastapi/app
+    cd fastapi/app
+    ```
 
-- After that create a python virtual environment and activate it
-```
-python -m venv fastapivenv
-```
+2. Create a Python virtual environment and activate it:
+    ```bash
+    python -m venv fastapivenv
+    ```
 
-```
-source fastapivenv/bin/activate
-```
+    ```bash
+    source fastapivenv/bin/activate
+    ```
 
-- Then, install the required packages:
-```
-pip install -r requirements
-```
+3. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
--  Finally, start the FastAPI server:
-```
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-```
+4. Finally, start the FastAPI server:
+    ```bash
+    uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    ```
