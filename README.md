@@ -12,8 +12,7 @@
 >[!NOTE]
 >Please use a Linux environment to proceed.
 
-- First, download all the files and change the directory:
-1. First, download all the files and change the directory:
+1. First, download the **app** folder and follow the process below:
     ```bash
     cd
     mkdir fastapi
@@ -39,3 +38,7 @@
     ```bash
     uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     ```
+
+
+## About **app** folder
+
