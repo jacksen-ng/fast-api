@@ -10,7 +10,7 @@
 ## Installation
 
 >[!NOTE]
->Please use a Linux environment to proceed.
+>Please use MacOS environment to proceed.
 
 1. First, download the **app** folder and follow the process below:
     ```bash
