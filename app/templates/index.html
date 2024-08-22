@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .FunctionForm {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: inline-block;
+            color: #2c3e50;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .Result {
+            margin-top: 20px;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        img {
+            margin-top: 20px;
+            border-radius: 5px;
+            max-width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            button {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <h2>In this page I will create some sample functions</h2>
+    
+    <div class="container">
+        <div class="button-container">
+            <button id="showFunction1Button">Function1</button>
+            <button id="showFunction2Button">Function2</button>
+            <button id="showFunction3Button">Function3</button>
+        </div>
+        
+        <div id="function1Form" class="FunctionForm" data-result="{{ result }}">
+            <form id="calculationForm" action="/calculate" method="post">
+                <label for="number1">Number1:</label>
+                <input type="text" id="number1" name="number1"><br>
+                <label for="number2">Number2:</label>
+                <input type="text" id="number2" name="number2"><br>
+                <button id="answer" type="submit">Calculate</button>
+            </form>
+            
+            {% if result %}
+            <h2 class="Result">Result: {{ result }}</h2>
+            {% endif %}
+        </div>
+
+        <div id="function2Form" class="FunctionForm" data-bubble-result="{{ bubble_result }}">
+            <form id="bubbleSortForm" action="/bubblesort" method="post">
+                <label for="numbers">Numbers (space-separated):</label>
+                <input type="text" id="numbers" name="numbers"><br>
+                <button id="sort" type="submit">Sort</button>
+            </form>
+            
+            {% if bubble_result %}
+            <h2 class="Result">Sorted Numbers: {{ bubble_result }}</h2>
+            {% endif %}
+        </div>
+
+        <div id="function3Form" class="FunctionForm" data-image-result="{{ image_result }}">
+            <form id="imageUploadForm" action="/predict_image" method="post" enctype="multipart/form-data">
+                <label for="file">Upload Image:</label>
+                <input type="file" id="file" name="file"><br>
+                <button id="upload" type="submit">Upload and Predict</button>
+            </form>
+            
+            {% if uploaded_image_url %}
+            <h2 class="Result">Uploaded Image:</h2>
+            <img src="{{ uploaded_image_url }}" alt="Uploaded Image">
+            {% endif %}
+
+            {% if image_result %}
+            <h2 class="Result">Predicted Result: {{ image_result }}</h2>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div>
+
+        <p><a href="/logout">Logout</a></p>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
