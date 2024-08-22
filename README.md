@@ -56,3 +56,4 @@
 
 7. The **requirements.txt** file lists all the dependencies required to run the project.
 
+© 2024 Jacksen. All rights reserved.
