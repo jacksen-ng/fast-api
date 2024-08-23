@@ -12,7 +12,7 @@
 >[!NOTE]
 >Please use MacOS environment to proceed.
 
-1. First, download the **app** folder and follow the process below:
+1. First, download the *zip* file and follow the process below:
     ```bash
     cd
     cd Downloads
