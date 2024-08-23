@@ -15,9 +15,9 @@
 1. First, download the **app** folder and follow the process below:
     ```bash
     cd
-    mkdir fastapi
-    mv ~/Downloads/app ~/fastapi/app
-    cd fastapi/app
+    cd Downloads
+    unzip fast-api-main.zip
+    cd fast-api-main
     ```
 
 2. Create a Python virtual environment and activate it:
@@ -34,7 +34,18 @@
     pip install -r requirements.txt
     ```
 
-4. Finally, start the FastAPI server:
+4. Before starting the server:
+    ```bash
+    cd app
+    cd db
+    python database.py
+    ```
+
+    ```bash
+    cd .. 
+    ```
+
+5. Finally, start the FastAPI server:
     ```bash
     uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     ```
