@@ -1,0 +1,6 @@
+fastapi
+jinja2
+tensorflow
+numpy
+sqlite3
+aiofiles
